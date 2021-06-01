@@ -7,27 +7,34 @@ using static MyTacoTruck.CookMethods;
 using static MyTacoTruck.Processor;
 namespace MyTacoTruck
 {
-    class Program
+    public class Program
     {
-        static async Task Main()
+        public static async Task Main()
         {
 
 
 
 
-
+         
+                UserInterface.RunInitialInterface();
+                
+               
+           
+       
+            
+            
             
 
-            UserInterface.RunInitialInterface();
-          
+
+
+            Console.ReadLine();
+
            
 
 
 
 
 
-
-            Console.ReadLine();
         }
 
 

@@ -11,13 +11,16 @@ namespace MyTacoTruck
     {
         public  const string newLine = "\n";
         public  const string doubleNewLine = "\n\n";
-        public static void RunInitialInterface()
+
+
+
+        public static async Task RunInitialInterface()
         {
 
             Greeting();
+            
 
-
-            Console.ReadLine();
+            
 
 
         }
@@ -214,12 +217,16 @@ namespace MyTacoTruck
         {
             AmericanTaco myTaco = new(amount);
             Processor.CookTheOrder(myTaco);
+
         }
 
         public static void CookTraditonalTaco(int amount)
         {
             TraditionalTaco myTaco = new(amount);
             Processor.CookTheOrder(myTaco);
+            
+            
+          
         }
 
         public static void CookBothKindsOfTaco(int amountA, int amountT)
@@ -228,6 +235,7 @@ namespace MyTacoTruck
             TraditionalTaco myTacoT = new(amountT);
             Processor.CookTheOrder(myTacoA);
             Processor.CookTheOrder(myTacoT);
+            
         }
 
         public static void OrderProcessingPrompt()
@@ -236,13 +244,23 @@ namespace MyTacoTruck
             Console.WriteLine("ORDER PROCESSING...");
             Console.WriteLine(doubleNewLine);
         }
+
+
+
+        public static async Task GoAgain()
+        {
+            Program.Main();
+            Console.ReadLine();
+            
+
+        }
+
+
+
     }
 
 
 }
-
-
-
 
 
 
