@@ -141,20 +141,20 @@ namespace MyTacoTruck
                 {
                     case "A":
                         Console.Clear();
-                        int amountofTraditional = AmountOfTacosOneType("Traditional");
+                        int amountofTraditional = AmountOfTacos("Traditional");
                         OrderProcessingPrompt();
                         CookTraditonalTaco(amountofTraditional);
                         break;
                     case "B":
                         Console.Clear();
-                        int amountofAmerican = AmountOfTacosOneType("American");
+                        int amountofAmerican = AmountOfTacos("American");
                         OrderProcessingPrompt();
                         CookAmericanTaco(amountofAmerican);
                         break;
                     case "C":
                         Console.Clear();
-                        int amountofTraditionalBoth = AmountOfTacosOneType("Traditional");
-                        int amountofAmericanBoth = AmountOfTacosOneType("American");
+                        int amountofTraditionalBoth = AmountOfTacos("Traditional");
+                        int amountofAmericanBoth = AmountOfTacos("American");
                         OrderProcessingPrompt();
                         CookBothKindsOfTaco(amountofAmericanBoth, amountofTraditionalBoth);
                         break;
@@ -176,7 +176,7 @@ namespace MyTacoTruck
 
         }
 
-        public static int AmountOfTacosOneType(string typeOfTaco)
+        public static int AmountOfTacos(string typeOfTaco)
         {
 
        
@@ -205,7 +205,7 @@ namespace MyTacoTruck
                     Console.Clear();
                     ErrorNumberPrompt();
                     Console.WriteLine(newLine);
-                    AmountOfTacosOneType(typeOfTaco);
+                    AmountOfTacos(typeOfTaco);
                     return 0;
 
 
