@@ -29,7 +29,7 @@ namespace MyTacoTruck
 
 
 
-        public static async Task<Toppings> PrepareToppings(TacoBase taco) // need to label this async
+        public static async Task<Toppings> PrepareToppingsAsync(TacoBase taco) // need to label this async
         {
             if (taco is AmericanTaco)
             {
@@ -60,7 +60,7 @@ namespace MyTacoTruck
 
 
 
-        public static async Task<Protein> CookProtein(TacoBase taco)  // need to labal this async
+        public static async Task<Protein> CookProteinAsync(TacoBase taco)  // need to labal this async
         {
             Console.WriteLine($"Heating up the skillet for the {taco.Amount} {taco.Protein.TypeOfProtein} {(taco.Amount == 1 ? "taco" : "tacos")} ");
             await Task.Delay(2000);

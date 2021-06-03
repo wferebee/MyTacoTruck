@@ -15,11 +15,26 @@ namespace MyTacoTruck
 
 
 
-         
-                UserInterface.RunInitialInterface();
-                
-               
-           
+
+
+            bool truth = true;
+
+            while (truth)
+            {
+               await RunTacoTruck();
+                await Task.Delay(2000);
+//;                Console.WriteLine("Would You Like to go again");
+//                Console.WriteLine("Hit \"A\" if yes and any ither key to exit");
+                string theAnswer = Console.ReadLine();
+
+                if (theAnswer == "A")
+                {
+                    truth = true;
+                } else
+                {
+                    truth = false;
+                }
+            }
        
             
             
@@ -27,7 +42,7 @@ namespace MyTacoTruck
 
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
 
            
 
@@ -39,7 +54,11 @@ namespace MyTacoTruck
 
 
 
-
+        public static async Task RunTacoTruck()
+        {
+            await UserInterface.RunInitialInterface();
+            
+        }
 
 
     }

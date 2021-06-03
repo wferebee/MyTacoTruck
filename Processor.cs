@@ -17,9 +17,9 @@ namespace MyTacoTruck
         {
 
             //Task shellsTask = HeatShellsAsync(myTaco);
-            Task toppingsTask = PrepareToppings(myTaco);
-            Task proteinTask = CookProtein(myTaco);
-            Task shellsTask2 = MakeSureShellsAreDone(myTaco);
+            Task toppingsTask = PrepareToppingsAsync(myTaco);
+            Task proteinTask = CookProteinAsync(myTaco);
+            Task shellsTask2 = WaitForShellsFinishAsync(myTaco);
             var tacoTasks = new List<Task> { shellsTask2/*shellsTask*/, toppingsTask, proteinTask };
 
             while (tacoTasks.Count > 0)
@@ -49,27 +49,24 @@ namespace MyTacoTruck
 
             }
 
-            
-            Console.WriteLine("\n");
-            Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine($"Your {myTaco.Amount} {myTaco.Protein.TypeOfProtein} {(myTaco.Amount == 1 ? "taco is" : "tacos are")} ready!");
-            Console.WriteLine("-------------------------------" +
-                "----------------------------");
-            Console.WriteLine("\n");
-            Console.WriteLine("HAVE A NICE DAY!");
-
-            await Task.Delay(7000);
-            Console.Clear();
 
 
 
-        
-            
+           await  GoodbyeMessagePrompt(myTaco);
+
+           // Console.WriteLine("How was you Day?");
+           // string myDayAnswer = Console.ReadLine();
+
+           //await  Task.Delay(5000);
+           // Console.WriteLine($"This is your answer: {myDayAnswer}");
+
+            await Task.Delay(2000);
+            //Console.ReadLine();
 
         }
 
 
-        public static async Task<Shells> MakeSureShellsAreDone(TacoBase taco)
+        public static async Task<Shells> WaitForShellsFinishAsync(TacoBase taco)
         {
             _ = await HeatShellsAsync(taco);
             Console.WriteLine($"Put {(taco.Amount == 1 ? "shell" : "shells")}" +
@@ -83,7 +80,24 @@ namespace MyTacoTruck
 
         }
 
-   
+        public static async Task GoodbyeMessagePrompt(TacoBase myTaco)
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine($"Your {myTaco.Amount} {myTaco.Protein.TypeOfProtein} {(myTaco.Amount == 1 ? "taco is" : "tacos are")} ready!");
+            Console.WriteLine("-------------------------------" +
+                "----------------------------");
+            Console.WriteLine("\n");
+            Console.WriteLine("HAVE A NICE DAY!");
+
+            await Task.Delay(3000);
+            Console.Clear();
+            Console.WriteLine("Would You Like to go again");
+            Console.WriteLine("Hit \"A\" if yes and any other key to exit");
+
+        }
+
+
     }
 
 
