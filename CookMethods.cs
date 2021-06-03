@@ -28,7 +28,6 @@ namespace MyTacoTruck
         }
 
 
-
         public static async Task<Toppings> PrepareToppingsAsync(TacoBase taco) // need to label this async
         {
             if (taco is AmericanTaco)
@@ -55,8 +54,6 @@ namespace MyTacoTruck
             }
 
         }
-
-
 
 
 

@@ -12,8 +12,6 @@ namespace MyTacoTruck
         public  const string newLine = "\n";
         public  const string doubleNewLine = "\n\n";
 
-
-
         public static async Task RunInitialInterface()
         {
 
@@ -40,8 +38,6 @@ namespace MyTacoTruck
             Console.WriteLine("B: See The Menu");
             AnswerForInitialQuestion();
         }
-
-
 
         public static void ErrorChoicePrompt()
         {
@@ -244,8 +240,6 @@ namespace MyTacoTruck
             Console.WriteLine("ORDER PROCESSING...");
             Console.WriteLine(doubleNewLine);
         }
-
-
 
         public static async Task GoAgain()
         {
